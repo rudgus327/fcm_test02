@@ -1,10 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-
-import '/api/firebase_api.dart';
-import '/db/db_servier.dart';
-import '/db/user_model.dart';
 
 class MyHomePage extends StatelessWidget {
 

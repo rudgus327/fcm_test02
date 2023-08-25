@@ -9,7 +9,7 @@ class DBService{
     try{
 
       final response = await client.post(
-        Uri.parse('http://14.36.25.169:9999/flutter/save')
+        Uri.parse('http://172.30.1.98:9999/restFlutter/save')
         ,headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
           "Access-Control-Allow-Origin": "*",
@@ -24,7 +24,7 @@ class DBService{
       // print(result);
       var statusCode = response.statusCode;
       print('statusCode:: $statusCode');
-      if(statusCode != 201){
+      if(statusCode != 200){
         throw Exception("Failed to send data");
       }else{
         print("User Data send successfully");

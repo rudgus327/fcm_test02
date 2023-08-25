@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var homeTitle ='Flutter_demo';
-    print('route:${NotificationScreen.route}');
     return MaterialApp(
       title: homeTitle,
       theme: ThemeData(primarySwatch: Colors.lightGreen),

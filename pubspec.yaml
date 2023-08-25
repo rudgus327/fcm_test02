@@ -30,6 +30,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  shared_preferences: 2.2.0
+  sqflite: 2.3.0 #SQLite를 Android와 iOS에 동시에 지원해주는 패키지
+  path: 1.8.3 #경로 합칠때 사용
+  path_provider: 2.1.0 #android와 ios에서 필요한 경로를 알려주는 패키지
   firebase_messaging: 14.6.5
   flutter_local_notifications: 15.1.0
   firebase_core: 2.15.0

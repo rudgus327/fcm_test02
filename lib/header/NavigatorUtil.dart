@@ -80,7 +80,7 @@ List<Widget> makeListTiles (List<Map<String,dynamic>> lists,BuildContext context
  페이지 리턴(헤더+바디)
  */
 class GotoPage extends StatelessWidget {
-  var targetClass;
+  dynamic targetClass;
   GotoPage({super.key,this.targetClass});
 
   @override
@@ -89,7 +89,7 @@ class GotoPage extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppbar(),
       body: targetClass,
-      drawer:NavigationDrawSet(),
+      drawer:const NavigationDrawSet(),
     );
   }
 }
