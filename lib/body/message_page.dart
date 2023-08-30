@@ -2,8 +2,6 @@ import 'package:fcm_test02/db/db_helper/message_helper.dart';
 import 'package:fcm_test02/db/message_model.dart';
 import 'package:flutter/material.dart';
 
-import '../header/NavigatorUtil.dart';
-
 class MessagePage extends StatefulWidget {
   const MessagePage({super.key});
 

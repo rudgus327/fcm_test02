@@ -37,6 +37,9 @@ dependencies:
   firebase_messaging: 14.6.5
   flutter_local_notifications: 15.1.0
   firebase_core: 2.15.0
+  webview_flutter: 3.0.4 # 3.0.4까지만 WebView() 위젯 지원
+#  webview_flutter_android: 3.9.3
+#  webview_flutter_wkwebview: 3.7.3
 
 
 
@@ -46,6 +49,7 @@ dependencies:
   http: ^1.1.0
   get: ^4.6.5
   intl: ^0.18.1
+
 
 dev_dependencies:
   flutter_test:
