@@ -8,7 +8,7 @@ class WebviewNaverPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body:  WebView(
-        initialUrl: 'https://www.naver.com/',
+        initialUrl: 'https://m.naver.com/',
         javascriptMode: JavascriptMode.unrestricted,
         gestureNavigationEnabled: true,
         userAgent: "random",
