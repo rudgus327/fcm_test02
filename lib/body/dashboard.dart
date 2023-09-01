@@ -77,21 +77,7 @@ class _CRUDDashboardState extends State<CRUDDashboard> {
                           ],
                         ),
                       ),
-                      const SizedBox(width: 30,),
-                      ElevatedButton(onPressed: (){
-                        DashboardDBhelper().deleteList(item!.id);
-                        setState(() {
-                          search = "";
-                          futureDashboardList = DashboardDBhelper().getList(search);
-                        });
-                      }, child: const Icon(Icons.delete)),
-                      const SizedBox(width: 10,),
-                      ElevatedButton(onPressed: (){
-                        // 서버로 전송 후 저장
-                        DBService dbService = DBService();
-                        var sendData =DashboardContents(id: item.id,title: item.title,content: item.content,createUser: item.createUser,createDate: item.createDate,updateDate: item.updateDate);
-                        dbService.sendServer(sendData,'/restFlutter/saveData');
-                      }, child: const Icon(Icons.send)),
+
                     ],
                   ) ,
                 ),
@@ -214,7 +200,8 @@ class _CRUDDashboardState extends State<CRUDDashboard> {
                     ),//renderTextFormField
                     SizedBox(height: 30.0,),
 
-                    renderButton(item,type),
+                    renderCustomButton(item,type),
+
                   ],
                 ),
               )
@@ -224,7 +211,36 @@ class _CRUDDashboardState extends State<CRUDDashboard> {
     );
   }
 
-  // button handler
+  // 팝업창 버튼 핸들러
+  renderCustomButton(DashboardContents item,String type){
+    if(type == save){
+      return renderButton(item,save);
+    }else{
+      return Row(
+        children: [
+          const SizedBox(width: 50,),
+          renderButton(item,edit),
+          const SizedBox(width: 10,),
+          ElevatedButton(onPressed: (){
+            DashboardDBhelper().deleteList(item!.id);
+            setState(() {
+              search = "";
+              futureDashboardList = DashboardDBhelper().getList(search);
+            });
+          }, child: const Text('삭제',style: const TextStyle(color: Colors.white))),
+          const SizedBox(width: 10,),
+          ElevatedButton(onPressed: (){
+            // 서버로 전송 후 저장
+            DBService dbService = DBService();
+            var sendData =DashboardContents(id: item.id,title: item.title,content: item.content,createUser: item.createUser,createDate: item.createDate,updateDate: item.updateDate);
+            dbService.sendServer(sendData,'/restFlutter/saveData');
+          }, child: const Text('전송',style: const TextStyle(color: Colors.white))),
+        ],
+      );
+    }
+  }
+  
+  // save/edit button handler
   renderButton(DashboardContents item,String type){
     return ElevatedButton(
       onPressed: () async{
