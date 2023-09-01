@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../db/dashboard_db.dart';
 import '../db/db_helper/dashboard_helper.dart';
 
+import '../db/db_servier.dart';
 import '../util/textFieldUtil.dart';
 
 final _textController = TextEditingController();
@@ -83,19 +84,19 @@ class _CRUDDashboardState extends State<CRUDDashboard> {
                           search = "";
                           futureDashboardList = DashboardDBhelper().getList(search);
                         });
-                      }, child: Text('삭제')),
+                      }, child: const Icon(Icons.delete)),
                       const SizedBox(width: 10,),
                       ElevatedButton(onPressed: (){
                         // 서버로 전송 후 저장
-                      }, child: Text('전송')),
+                        DBService dbService = DBService();
+                        var sendData =DashboardContents(id: item.id,title: item.title,content: item.content,createUser: item.createUser,createDate: item.createDate,updateDate: item.updateDate);
+                        dbService.sendServer(sendData,'/restFlutter/saveData');
+                      }, child: const Icon(Icons.send)),
                     ],
                   ) ,
                 ),
-
               );
-
             },
-
           );
         },
       ),

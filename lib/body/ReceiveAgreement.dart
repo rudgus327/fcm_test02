@@ -44,7 +44,7 @@ class ReceiveAgreement extends StatelessWidget {
                         var userdata = User(userId: id,createDate: strToday,fcmToken: fcmToken);
 
                         DBService dbService = DBService();
-                        dbService.saveUser(userdata);
+                        dbService.sendServer(userdata,'/restFlutter/save');
 
                       }
                       ,child: Text("알림 메세지 수신 동의"),),

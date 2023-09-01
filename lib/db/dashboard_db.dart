@@ -16,4 +16,13 @@ class DashboardContents{
     ,this.createDate
     ,this.updateDate});
 
+  Map<String,dynamic> toJson()=>{
+    'id':id,
+    'title':title,
+    'content':content,
+    'createUser':createUser,
+    'createDate':createDate,
+    'updateDate':updateDate,
+  };
+
 }

@@ -4,18 +4,18 @@ import 'package:http/http.dart' as http;
 
 class DBService{
 
-  Future<void> saveUser(User user) async{
+  Future<void> sendServer(dynamic data,String url) async{
     var client = http.Client();
     try{
 
       final response = await client.post(
-        Uri.parse('http://172.30.1.98:9999/restFlutter/save')
+        Uri.parse('http://172.30.1.98:9999$url')
         ,headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Methods": "POST, GET, OPTIONS, PUT, DELETE, HEAD",
         },
-        body: jsonEncode(user.toJson()),
+        body: jsonEncode(data.toJson()),
       ).timeout(const Duration(seconds: 30),onTimeout: (){
           return http.Response('Error',408);
           // Request Timeout response status code

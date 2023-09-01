@@ -24,7 +24,7 @@ class MainCommon extends StatelessWidget {
       ,{'icons':const Icon(Icons.home),'title':'Home','targetClass':const MyHomePage()}
       ,{'icons':const Icon(Icons.check_circle_outline),'title':'수신 동의','targetClass':const ReceiveAgreement()}
       ,{'icons':const Icon(Icons.mark_as_unread_sharp),'title':'Message List','targetClass':const MessagePage()}
-      ,{'icons':const Icon(Icons.send),'title':'Send Message','targetClass':const MainPage()}
+      ,{'icons':const Icon(Icons.send),'title':'Web View','targetClass':const MainPage()}
       ,{'icons':const Icon(Icons.web),'title':'Web View to Naver','targetClass':const WebviewNaverPage()}
       ,{'icons':const Icon(Icons.developer_board),'title':'게시판','targetClass':const CRUDDashboard()}
 
